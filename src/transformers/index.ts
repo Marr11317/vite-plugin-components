@@ -2,12 +2,12 @@ import { Context } from '../context'
 import { Transformer } from '../types'
 import { Vue2Transformer } from './vue2'
 import { Vue3Transformer } from './vue3'
-import { Svelte313Transformer } from './svelte313'
+import { Svelte3Transformer } from './svelte3'
 
 export function getTransformer(ctx: Context): Transformer {
   switch (ctx.options.transformer) {
-    case 'svelte313':
-      return Svelte313Transformer(ctx)
+    case 'svelte3':
+      return Svelte3Transformer(ctx)
 
     case 'vue2':
       return Vue2Transformer(ctx)

@@ -15,7 +15,7 @@ function VitePluginComponents(options: Options = {}): Plugin {
       if (config.plugins.find(i => i.name === 'vite-plugin-vue2'))
         options.transformer = options.transformer || 'vue2'
       else if (config.plugins.find(i => i.name === 'vite-plugin-svelte'))
-        options.transformer = options.transformer || 'svelte313'
+        options.transformer = options.transformer || 'svelte3'
 
       ctx = new Context(options, config)
       transformer = getTransformer(ctx)

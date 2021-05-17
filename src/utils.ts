@@ -98,7 +98,7 @@ export function stringifyComponentImport({ name, path, importName, sideEffects }
 }
 
 export function resolveOptions(options: Options, viteConfig: ResolvedConfig): ResolvedOptions {
-  if (options.transformer === 'svelte313') {
+  if (options.transformer === 'svelte3') {
     if (options.extensions) {
       if (typeof options.extensions === 'string') {
         // convert to array

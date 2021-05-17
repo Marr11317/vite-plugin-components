@@ -86,7 +86,7 @@ export interface Options {
    *
    * @default 'vue3'
    */
-  transformer?: 'vue2' | 'vue3' | 'svelte313'
+  transformer?: 'vue2' | 'vue3' | 'svelte3'
 }
 
 export type ResolvedOptions = Omit<

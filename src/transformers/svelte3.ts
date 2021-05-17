@@ -6,7 +6,7 @@ import { pascalCase, stringifyComponentImport } from '../utils'
 
 const debug = Debug('vite-plugin-components:transform:svelte')
 
-export function Svelte313Transformer(ctx: Context): Transformer {
+export function Svelte3Transformer(ctx: Context): Transformer {
   return (code, id, path, query) => {
     if (!(path.endsWith('.svelte') || ctx.options.customLoaderMatcher(id)))
       return null
@@ -23,7 +23,7 @@ export function Svelte313Transformer(ctx: Context): Transformer {
     const s = new MagicString(code)
 
     // https://github.com/sveltejs/svelte/blob/02b49a1bb413be4250f7e4a0e381ccda7efa1a0f/src/compiler/compile/render_dom/wrappers/InlineComponent/index.ts#L429
-    for (const match of code.matchAll(/create_component\((.+)\.\$\$\.fragment\);/g)) {
+    for (const match of code.matchAll(/(\w+)\.\$\$\.fragment/g)) {
       const matchedName = match[1]
       if (match.index != null && matchedName && !matchedName.startsWith('_')) {
         const instantiationMatch: RegExpMatchArray | null = findInstantiation(matchedName, code)
